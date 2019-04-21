@@ -1,0 +1,3 @@
+21/04/2019
+  Creació i upload del projecte a GitHub.
+  El projecte només té implementat les funcionalitats més bàsiques i han estat testejades des del propi codi, no hi ha interfície gràfica.
