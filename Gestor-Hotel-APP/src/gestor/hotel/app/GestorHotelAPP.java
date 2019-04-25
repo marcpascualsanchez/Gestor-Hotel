@@ -5,11 +5,17 @@
  */
 package gestor.hotel.app;
 
+import gestor.hotel.app.vista.javafx.LoginController;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -21,24 +27,24 @@ public class GestorHotelAPP extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
         
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        try 
+        {
+            FXMLLoader loader = new FXMLLoader();
+            AnchorPane root = loader.load(getClass().getResourceAsStream("vista/javafx/Login.fxml"));
+            Scene scene = new Scene(root);
+            primaryStage.setTitle("Login");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } 
+        catch (NullPointerException ex) 
+        {
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        catch (IOException ex) 
+        {
+            Logger.getLogger(GestorHotelAPP.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

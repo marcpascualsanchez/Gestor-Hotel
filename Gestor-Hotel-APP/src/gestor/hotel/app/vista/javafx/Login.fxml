@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainBackground" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestor.hotel.app.vista.javafx.LoginController">
+<AnchorPane id="AnchorPane" fx:id="window" prefHeight="400.0" prefWidth="600.0" styleClass="mainBackground" stylesheets="/gestor/hotel/app/vista/general.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestor.hotel.app.vista.javafx.LoginController">
    <children>
       <TextField layoutX="226.0" layoutY="188.0" />
       <TextField layoutX="226.0" layoutY="253.0" />
@@ -13,8 +12,4 @@
       <Text layoutX="226.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="mainLetterColor" text="Contraseña" />
       <Text layoutX="285.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="mainLetterColor" text="Login" textAlignment="CENTER" />
    </children>
-   <stylesheets>
-      <URL value="@../login.css" />
-      <URL value="@../general.css" />
-   </stylesheets>
 </AnchorPane>

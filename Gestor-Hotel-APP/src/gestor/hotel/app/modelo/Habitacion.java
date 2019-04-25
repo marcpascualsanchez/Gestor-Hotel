@@ -5,7 +5,10 @@
  */
 package gestor.hotel.app.modelo;
 import gestor.hotel.app.controlador.MySQLController;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import javafx.beans.property.SimpleFloatProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 /**
  *
  * @author user
@@ -39,6 +42,7 @@ public class Habitacion implements Insertable, Deleteable{
         //para crear objetos vacios desde HabitacionManager
     }
     
+    /*SETTERS&GETTERS*/
     public int getId(){
         return this.id;
     }
@@ -70,6 +74,26 @@ public class Habitacion implements Insertable, Deleteable{
     public void setId_usuario_creador(int id_usuario_creador){
         this.id_usuario_creador = id_usuario_creador;
     }
+    
+    /*END OF SETTERS&GETTERS*/
+    
+    /*JavaFX SETTERS*/
+    public void setNumeroFX(SimpleIntegerProperty numero){
+        this.numero = numero.get();
+    }
+    
+    public SimpleIntegerProperty getNumeroFX(SimpleIntegerProperty numero){
+        return new SimpleIntegerProperty(this.numero);
+    }
+    
+    public void getPrecioFX(SimpleFloatProperty precio){
+        this.precio = precio.get();
+    }
+    
+    public SimpleFloatProperty getPrecioFX(){
+        return new SimpleFloatProperty(this.precio);
+    }
+    /*END OF JavaFX SETTERS*/
     
     @Override
     public void setList(){
