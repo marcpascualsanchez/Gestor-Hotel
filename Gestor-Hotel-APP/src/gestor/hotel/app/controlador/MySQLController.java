@@ -65,12 +65,12 @@ public class MySQLController
         }
         query += " WHERE `"+ table + "`.`id` = " + id + ";";
         
-      this.commit(query);
+        this.commit(query);
 
   }
   
   private void commit(String query){
-      if(this.conn != null){
+    if(this.conn != null){
         try
         {     
           Statement st = this.conn.createStatement();

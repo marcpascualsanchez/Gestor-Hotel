@@ -145,10 +145,10 @@ public class Habitacion implements Insertable, Deleteable, Updateable{
         String result = ""; 
         
         for (int i = 0; i < (this.fieldNames.size() - 1); i++) {//no usamos iterador para controlar la ultima coma
-            result += this.propertyMap.get(this.fieldNames.get(i)) + ", ";
+            result += this.fieldNames.get(i) + ": " + this.propertyMap.get(this.fieldNames.get(i)) + ", ";
         }
         
-        result += this.fieldNames.get(this.fieldNames.size() - 1);
+        result += this.propertyMap.get((this.fieldNames.size() - 1));
         
         return result;
     }

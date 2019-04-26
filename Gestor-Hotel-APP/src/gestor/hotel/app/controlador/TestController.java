@@ -22,16 +22,16 @@ public class TestController {
 
     public static void main(String[] args) {
         MySQLController mysqlC = new MySQLController(mysqlUrl, mysqlUser, mysqlPass);
-        //mysqlC.connect();
+        mysqlC.connect();
         
         //probar inserts y deletes
         
         //campos: `cliente` (`id`, `nombre`, `dni`, `nacionalidad`, `telefono`, `email`, `ocupacion`, `estado_civil`, `id_usuario_creador`)
-        Cliente c1 = new Cliente(0, "nombre2","dni2", "nacionalidad2", "telf2", "email2", "ocu2", "est2", 14);
-        c1.update(mysqlC);
+        //Cliente c1 = new Cliente(0, "SERGI", "777", "cat", "0009", "seru@mail.com", "sonidista", "casat", 14);
+        //c1.insert(mysqlC);
         
-        Habitacion h1 = new Habitacion(3, 10, 50.5f, 14);
-        h1.update(mysqlC);
+        //Habitacion h1 = new Habitacion(3, 17, 99.5f, 14);
+        //h1.update(mysqlC);
         //h1.delete(mysqlC);
        
         /*

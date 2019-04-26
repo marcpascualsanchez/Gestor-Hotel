@@ -21,7 +21,7 @@ public class Cliente implements Insertable, Deleteable, Updateable{
     
     //campos
     public static List<String> fieldNames = new ArrayList<>(
-        Arrays.asList("id", "nombre", "dni", "nacionalidad", "nacionalidad", "telefono", "email", "ocupacion", "estado_civil", "id_usuario_creador")
+        Arrays.asList("id", "nombre", "dni", "nacionalidad", "telefono", "email", "ocupacion", "estado_civil", "id_usuario_creador")
     );
     public int id;
     public String nombre;
@@ -193,11 +193,11 @@ public class Cliente implements Insertable, Deleteable, Updateable{
     public String toString(){
         String result = ""; 
         
-        for (int i = 0; i < (this.propertyMap.size() - 1); i++) {//no usamos iterador para controlar la ultima coma
-            result += this.propertyMap.get(i) + ", ";
+        for (int i = 0; i < (this.fieldNames.size() - 1); i++) {//no usamos iterador para controlar la ultima coma
+            result += this.fieldNames.get(i) + ": " + this.propertyMap.get(this.fieldNames.get(i)) + ", ";
         }
         
-        result += this.propertyMap.get(this.propertyMap.size() - 1);
+        result += this.propertyMap.get((this.fieldNames.size() - 1));
         
         return result;
     }
