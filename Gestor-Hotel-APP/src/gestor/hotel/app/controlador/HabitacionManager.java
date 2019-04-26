@@ -43,7 +43,7 @@ public class HabitacionManager extends EntityManager{
             currentHabitacion.setPrecio(results.getFloat("precio"));
             currentHabitacion.setId_usuario_creador(results.getInt("id_usuario_creador"));
             
-            currentHabitacion.setList();
+            currentHabitacion.setPropertyMap();
 
             this.habitacionList.add(currentHabitacion);
           }

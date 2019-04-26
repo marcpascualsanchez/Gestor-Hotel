@@ -30,13 +30,18 @@ public class MySQLController
         }
   }
   
-  public void insert(String table, List<String> values){
+  public void insert(String table, Map<String, String> values){
+      int i = 0;
       String query = "INSERT INTO `" + table + "` VALUES (";
       
-      for(int i = 0; i < (values.size() - 1); i++){
-          query += "'" + values.get(i) + "', ";
-      }
-      query += "'" + values.get(values.size() - 1) + "');";       //controlar la ultima coma i parentesi
+        for (Map.Entry<String, String> pair : values.entrySet()) {
+            if(i == values.size() - 1){
+                query += "'" + pair.getValue() + "');";//controlar la ultima coma i parentesi
+            }else{
+                query += "'" + pair.getValue() + "', ";
+            }
+            i++;
+        }
       
       this.commit(query);
   }
@@ -44,6 +49,24 @@ public class MySQLController
   public void delete(String table, int id){
       String query = "DELETE FROM `" + table + "` WHERE `" + table + "`.`id` = " + id;
       this.commit(query);
+  }
+  
+  public void update(String table, Map<String, String> values, int id){
+      int i = 0;
+      String query = "UPDATE `" + table + "` SET ";
+      
+        for (Map.Entry<String, String> pair : values.entrySet()) {
+            if(i == values.size() - 1){
+                query += pair.getKey() + "='" + pair.getValue() + "'";//controlar la ultima coma i parentesi
+            }else{
+                query += pair.getKey() + "='" + pair.getValue() + "', ";
+            }
+            i++;
+        }
+        query += " WHERE `"+ table + "`.`id` = " + id + ";";
+        
+      this.commit(query);
+
   }
   
   private void commit(String query){

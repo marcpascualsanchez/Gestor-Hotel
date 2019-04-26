@@ -6,32 +6,40 @@
 package gestor.hotel.app.modelo;
 import gestor.hotel.app.controlador.MySQLController;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 /**
  *
  * @author user
  */
-public class Habitacion implements Insertable, Deleteable{
+public class Habitacion implements Insertable, Deleteable, Updateable{
     //tabla
     public static String tableName = "habitacion";
     
     //campos
+    public static List<String> fieldNames = new ArrayList<>(
+        Arrays.asList("id", "numero", "precio", "id_usuario_creador")
+    );
+
     public int id;
     public int numero;
     public float precio;
     public int id_usuario_creador;
-    public List<String> paramList;
+    public Map<String, String> propertyMap;
     
     //campos `habitacion` (`id`, `numero`, `precio`, `id_usuario_creador`)
-    Habitacion(int id, int numero, float precio, int id_usuario_creador){
+    public Habitacion(int id, int numero, float precio, int id_usuario_creador){
         try{
             this.id = id;
             this.numero = numero;
             this.precio = precio;
             this.id_usuario_creador = id_usuario_creador;
-            this.setList();
+            //this.setFieldNames();
+            this.setPropertyMap();
         }
         catch(Exception e){
             System.err.println("Error creating habitacion object.");
@@ -95,19 +103,31 @@ public class Habitacion implements Insertable, Deleteable{
     }
     /*END OF JavaFX SETTERS*/
     
+    /*
     @Override
-    public void setList(){
-        this.paramList = new ArrayList<String>();
+    public void setFieldNames(){
+        this.fieldNames = new ArrayList<String>();
         
-        this.paramList.add(String.valueOf(this.id));
-        this.paramList.add(String.valueOf(this.numero));
-        this.paramList.add(String.valueOf(this.precio));
-        this.paramList.add(String.valueOf(this.id_usuario_creador));
+        this.fieldNames.add("id");
+        this.fieldNames.add("numero");
+        this.fieldNames.add("precio");
+        this.fieldNames.add("id_usuario_creador");
+    }
+    */
+    
+    @Override
+    public void setPropertyMap(){
+        this.propertyMap = new LinkedHashMap<String, String>();
+        
+        this.propertyMap.put(this.fieldNames.get(0), String.valueOf(this.id));
+        this.propertyMap.put(this.fieldNames.get(1), String.valueOf(this.numero));
+        this.propertyMap.put(this.fieldNames.get(2), String.valueOf(this.precio));
+        this.propertyMap.put(this.fieldNames.get(3), String.valueOf(this.id_usuario_creador));
     }
     
     @Override
     public void insert(MySQLController controller){
-        controller.insert(tableName, this.paramList);
+        controller.insert(tableName, this.propertyMap);
     }
     
     @Override
@@ -116,14 +136,19 @@ public class Habitacion implements Insertable, Deleteable{
     }
     
     @Override
+    public void update(MySQLController controller){
+        controller.update(tableName, this.propertyMap, this.id);
+    }
+    
+    @Override
     public String toString(){
         String result = ""; 
         
-        for (int i = 0; i < (this.paramList.size() - 1); i++) {//no usamos iterador para controlar la ultima coma
-            result += this.paramList.get(i) + ", ";
+        for (int i = 0; i < (this.fieldNames.size() - 1); i++) {//no usamos iterador para controlar la ultima coma
+            result += this.propertyMap.get(this.fieldNames.get(i)) + ", ";
         }
         
-        result += this.paramList.get(this.paramList.size() - 1);
+        result += this.fieldNames.get(this.fieldNames.size() - 1);
         
         return result;
     }

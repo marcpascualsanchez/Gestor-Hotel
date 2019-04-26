@@ -47,7 +47,7 @@ public class ClienteManager extends EntityManager{
             currentCliente.setEstado_civil(results.getString("estado_civil"));	
             currentCliente.setId_usuario_creador(results.getInt("id_usuario_creador"));
             
-            currentCliente.setList();
+            currentCliente.setPropertyMap();
 
             this.clienteList.add(currentCliente);
           }

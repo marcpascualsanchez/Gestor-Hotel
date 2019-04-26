@@ -5,17 +5,24 @@
  */
 package gestor.hotel.app.modelo;
 import gestor.hotel.app.controlador.MySQLController;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
  * @author user
  */
-public class Cliente implements Insertable, Deleteable{
+public class Cliente implements Insertable, Deleteable, Updateable{
     //tabla
     public static String tableName = "cliente";
     
     //campos
+    public static List<String> fieldNames = new ArrayList<>(
+        Arrays.asList("id", "nombre", "dni", "nacionalidad", "nacionalidad", "telefono", "email", "ocupacion", "estado_civil", "id_usuario_creador")
+    );
     public int id;
     public String nombre;
     public String dni;
@@ -25,10 +32,10 @@ public class Cliente implements Insertable, Deleteable{
     public String ocupacion;
     public String estado_civil;
     public int id_usuario_creador;
-    public List<String> paramList;
+    public Map<String, String> propertyMap;
     
     //campos: `cliente` (`id`, `nombre`, `dni`, `nacionalidad`, `telefono`, `email`, `ocupacion`, `estado_civil`, `id_usuario_creador`)
-    Cliente(int id, String nombre, String dni, String nacionalidad, String telefono, String email, String ocupacion, String estado_civil, int id_usuario_creador){
+    public Cliente(int id, String nombre, String dni, String nacionalidad, String telefono, String email, String ocupacion, String estado_civil, int id_usuario_creador){
         try{
             this.id = id;
             this.nombre = nombre;
@@ -39,7 +46,8 @@ public class Cliente implements Insertable, Deleteable{
             this.ocupacion = ocupacion;
             this.estado_civil = estado_civil;
             this.id_usuario_creador = id_usuario_creador;
-            this.setList();
+            //this.setFieldNames();
+            this.setPropertyMap();
         }
         catch(Exception e){
             System.err.println("Error creating cliente object.");
@@ -123,31 +131,49 @@ public class Cliente implements Insertable, Deleteable{
     public void setId_usuario_creador(int id_usuario_creador){
         this.id_usuario_creador = id_usuario_creador;
     }
+   
+    /*
+    @Override
+    public void setFieldNames(){
+        this.fieldNames = new ArrayList<String>();
+        
+        this.fieldNames.add("id");
+        this.fieldNames.add("nombre");
+        this.fieldNames.add("dni");
+        this.fieldNames.add("nacionalidad");
+        this.fieldNames.add("dni");
+        this.fieldNames.add("telefono");
+        this.fieldNames.add("email");
+        this.fieldNames.add("ocupacion");
+        this.fieldNames.add("estado_civil");
+        this.fieldNames.add("id_usuario_creador");
+    }
+    */
     
     @Override
-    public void setList(){
-        this.paramList = new ArrayList<String>();
+    public void setPropertyMap(){
+        this.propertyMap = new LinkedHashMap<String, String>();
         
-        this.paramList.add(String.valueOf(this.id));
-        this.paramList.add(this.nombre);
-        this.paramList.add(this.dni);
-        this.paramList.add(this.nacionalidad);
-        this.paramList.add(this.telefono);
-        this.paramList.add(this.email);
-        this.paramList.add(this.ocupacion);
-        this.paramList.add(this.estado_civil);
-        this.paramList.add(String.valueOf(this.id_usuario_creador));
+        this.propertyMap.put(this.fieldNames.get(0), String.valueOf(this.id));
+        this.propertyMap.put(this.fieldNames.get(1), this.nombre);
+        this.propertyMap.put(this.fieldNames.get(2), this.dni);
+        this.propertyMap.put(this.fieldNames.get(3), this.nacionalidad);
+        this.propertyMap.put(this.fieldNames.get(4), this.telefono);
+        this.propertyMap.put(this.fieldNames.get(5), this.email);
+        this.propertyMap.put(this.fieldNames.get(6), this.ocupacion);
+        this.propertyMap.put(this.fieldNames.get(7), this.estado_civil);
+        this.propertyMap.put(this.fieldNames.get(8), String.valueOf(this.id_usuario_creador));
     }
     
-    public List getList(){
-        return this.paramList;
+    public Map getPropertyMap(){
+        return this.propertyMap;
     }
     /*END SETTERS & GETTERS*/
     
     @Override
     public void insert(MySQLController controller){
-        if(this.paramList != null){
-            controller.insert(tableName, this.paramList);
+        if(this.propertyMap != null){
+            controller.insert(tableName, this.propertyMap);
         }else{
             System.err.println("Parameter list property can't be null if insert is needed.");
         }
@@ -159,14 +185,19 @@ public class Cliente implements Insertable, Deleteable{
     }
     
     @Override
+    public void update(MySQLController controller){
+        controller.update(tableName, this.propertyMap, this.id);
+    }
+    
+    @Override
     public String toString(){
         String result = ""; 
         
-        for (int i = 0; i < (this.paramList.size() - 1); i++) {//no usamos iterador para controlar la ultima coma
-            result += this.paramList.get(i) + ", ";
+        for (int i = 0; i < (this.propertyMap.size() - 1); i++) {//no usamos iterador para controlar la ultima coma
+            result += this.propertyMap.get(i) + ", ";
         }
         
-        result += this.paramList.get(this.paramList.size() - 1);
+        result += this.propertyMap.get(this.propertyMap.size() - 1);
         
         return result;
     }

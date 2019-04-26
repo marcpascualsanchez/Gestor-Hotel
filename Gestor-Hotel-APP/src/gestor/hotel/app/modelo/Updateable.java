@@ -4,14 +4,13 @@
  * and open the template in the editor.
  */
 package gestor.hotel.app.modelo;
-
 import gestor.hotel.app.controlador.MySQLController;
 
 /**
  *
- * @author user
+ * @author daw2
  */
-public interface Insertable {
-    public void insert(MySQLController controller);
+public interface Updateable {
+    public void update(MySQLController controller);
     public void setPropertyMap();
 }
