@@ -16,7 +16,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -30,12 +32,18 @@ public class LoginController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    
     @FXML AnchorPane window;
+    @FXML private Button buttonLogin;
+    @FXML private TextField textAreaUser;
+    @FXML private TextField textAreaPassword;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
+        System.out.println("initializing...");
+    }
+
+    public void enterIntoManagement(){
         try 
         {
             Stage secondStage = new Stage();
@@ -58,6 +66,16 @@ public class LoginController implements Initializable {
         {
             Logger.getLogger(GestorHotelAPP.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }    
+    }
+    
+    public void validateEnter(){
+        System.out.println("validating...");
+    }
+    
+    public void login(){
+        System.out.println("log in...");
+        this.validateEnter();
+        this.enterIntoManagement();
+    }
     
 }

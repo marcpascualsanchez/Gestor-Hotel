@@ -69,12 +69,12 @@ public class GestorController implements Initializable {
     
     @FXML
     private void update(ActionEvent event){
-        System.out.println("insertando desde gestor habitaciones.");
+        System.out.println("updateando desde gestor habitaciones.");
     }
     
     @FXML
     private void delete(ActionEvent event){
-        System.out.println("insertando desde gestor habitaciones.");
+        System.out.println("eliminando desde gestor habitaciones.");
     }
     
 }
