@@ -31,7 +31,7 @@ public class HabitacionManager extends EntityManager{
         Habitacion currentHabitacion;
         
         try{
-          results = this.controller.getSelect("*", tableName);
+          results = this.controller.select("*", tableName, "");
           
          // iterate through the java resultset
           while (results.next())

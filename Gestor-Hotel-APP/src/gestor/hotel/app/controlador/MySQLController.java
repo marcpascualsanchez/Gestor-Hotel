@@ -10,7 +10,7 @@ public class MySQLController
   private Connection conn;
   private Statement currentStatement;
   
-  MySQLController(String dbUrl, String dbUser, String dbPass){
+  public MySQLController(String dbUrl, String dbUser, String dbPass){
       this.dbUrl = dbUrl;
       this.dbUser = dbUser;
       this.dbPass = dbPass;
@@ -89,7 +89,7 @@ public class MySQLController
     }
   }
           
-  public ResultSet getSelect(String fields, String table)
+  public ResultSet select(String fields, String table, String conditions)
   {
     ResultSet rs = null;
     
@@ -98,7 +98,12 @@ public class MySQLController
         {     
           // our SQL SELECT query. 
           // if you only need a few columns, specify them by name instead of using "*"
-          String query = "SELECT " + fields + " FROM `" + table + "`;";
+          String query = "SELECT " + fields + " FROM `" + table + "`";
+          if(!conditions.equals("")){
+              query += " WHERE " + conditions;
+          }
+          query += ";";
+          System.out.println(query);
 
           // create the java statement
           this.currentStatement = this.conn.createStatement();

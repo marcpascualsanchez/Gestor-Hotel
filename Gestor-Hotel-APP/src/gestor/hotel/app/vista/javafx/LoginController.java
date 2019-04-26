@@ -6,9 +6,12 @@
 package gestor.hotel.app.vista.javafx;
 
 import gestor.hotel.app.GestorHotelAPP;
+import static gestor.hotel.app.controlador.HabitacionManager.tableName;
+import gestor.hotel.app.modelo.Habitacion;
 import static java.awt.SystemColor.window;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -68,14 +71,44 @@ public class LoginController implements Initializable {
         }
     }
     
-    public void validateEnter(){
-        System.out.println("validating...");
+    public boolean validateEnter(){
+        boolean result = false;
+        String user = textAreaUser.getText();
+        String pass = textAreaPassword.getText();
+        String conditions = "nombre='" + user + "' AND clave='" + pass +"'";
+        String fields = "nombre, clave";
+        String table = "usuario";
+        ResultSet resultsSQL;
+        
+        try{
+          resultsSQL = GestorHotelAPP.mysqlC.select(fields, table, conditions);
+          
+         // iterate through the java resultset
+          resultsSQL.next();
+          if( (resultsSQL.getString("nombre").equals(user)) && (resultsSQL.getString("clave").equals(pass)) ){
+              result = true;
+          }
+        }
+        catch (Exception e)
+        {
+          System.err.println("Got an exception loading BDD data in class " + this.getClass().getName());
+          System.err.println(e.getMessage());
+        }
+        
+        return result;
     }
     
     public void login(){
         System.out.println("log in...");
-        this.validateEnter();
-        this.enterIntoManagement();
+        if(this.validateEnter()){
+            this.enterIntoManagement();
+        }else{
+            this.showError();
+        }
+    }
+    
+    public void showError(){
+        System.out.println("Error de autentificación");
     }
     
 }

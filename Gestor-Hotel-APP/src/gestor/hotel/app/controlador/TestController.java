@@ -15,9 +15,9 @@ import gestor.hotel.app.modelo.Habitacion;
 public class TestController {
     /*SOLO PARA TESTEAR CODIGO COMO DEV*/
     
-    static String mysqlUrl = "jdbc:mysql://localhost/proyecto_hotel";
-    static String mysqlUser = "root";
-    static String mysqlPass = "";
+    private static String mysqlUrl = "jdbc:mysql://localhost/proyecto_hotel";
+    private static String mysqlUser = "root";
+    private static String mysqlPass = "";
     
 
     public static void main(String[] args) {

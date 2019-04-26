@@ -5,6 +5,7 @@
  */
 package gestor.hotel.app;
 
+import gestor.hotel.app.controlador.MySQLController;
 import gestor.hotel.app.vista.javafx.LoginController;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -24,6 +25,11 @@ import javafx.stage.Stage;
  * @author user
  */
 public class GestorHotelAPP extends Application {
+    
+    private static String mysqlUrl = "jdbc:mysql://localhost/proyecto_hotel";
+    private static String mysqlUser = "root";
+    private static String mysqlPass = "";
+    public static MySQLController mysqlC;
     
     @Override
     public void start(Stage primaryStage) {
@@ -51,6 +57,8 @@ public class GestorHotelAPP extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        mysqlC = new MySQLController(mysqlUrl, mysqlUser, mysqlPass);
+        mysqlC.connect();
         launch(args);
     }
     

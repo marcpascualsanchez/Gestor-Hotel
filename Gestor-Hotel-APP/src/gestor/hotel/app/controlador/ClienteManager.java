@@ -30,7 +30,7 @@ public class ClienteManager extends EntityManager{
         Cliente currentCliente;
         
         try{
-          results = this.controller.getSelect("*", tableName);
+          results = this.controller.select("*", tableName, "");
           
          // iterate through the java resultset
           while (results.next())
