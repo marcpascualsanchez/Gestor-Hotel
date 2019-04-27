@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gestor.hotel.app.vista.javafx;
+package gestor.hotel.app.controlador;
 
 import gestor.hotel.app.GestorHotelAPP;
 import static gestor.hotel.app.controlador.HabitacionManager.tableName;
@@ -23,6 +23,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -30,52 +31,32 @@ import javafx.stage.Stage;
  *
  * @author user
  */
-public class LoginController implements Initializable {
+public class LoginController extends FXController implements Initializable {
 
     /**
      * Initializes the controller class.
      */
-    @FXML AnchorPane window;
+    @FXML public AnchorPane mainWindow;
     @FXML private Button buttonLogin;
     @FXML private TextField textAreaUser;
     @FXML private TextField textAreaPassword;
+    @FXML private Text textError;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
         System.out.println("initializing...");
-    }
-
-    public void enterIntoManagement(){
-        try 
-        {
-            Stage secondStage = new Stage();
-            FXMLLoader loader = new FXMLLoader();
-            AnchorPane root = loader.load(getClass().getResourceAsStream("Gestor.fxml"));
-            Scene scene = new Scene(root);
-            secondStage.setTitle("Gestor");
-            secondStage.setScene(scene);
-            
-            secondStage.initOwner(window.getScene().getWindow());
-            ((Stage)window.getScene().getWindow()).close();
-            secondStage.show();
-            
-        } 
-        catch (NullPointerException ex) 
-        {
-            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        catch (IOException ex) 
-        {
-            Logger.getLogger(GestorHotelAPP.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    }   
+    
+    public void enterIntoMenu(){
+        changeWindow(mainWindow, "/gestor/hotel/app/vista/javafx/Menu.fxml", "Login");
     }
     
     public boolean validateEnter(){
         boolean result = false;
         String user = textAreaUser.getText();
         String pass = textAreaPassword.getText();
-        String conditions = "nombre='" + user + "' AND clave='" + pass +"'";
+        String conditions = "nombre='" + user + "' AND clave='" + pass +"'";//SQL conditions
         String fields = "nombre, clave";
         String table = "usuario";
         ResultSet resultsSQL;
@@ -100,15 +81,15 @@ public class LoginController implements Initializable {
     
     public void login(){
         System.out.println("log in...");
-        if(this.validateEnter()){
-            this.enterIntoManagement();
-        }else{
+        //if(this.validateEnter()){
+            this.enterIntoMenu();
+        /*}else{
             this.showError();
-        }
+        }*/
     }
     
     public void showError(){
-        System.out.println("Error de autentificación");
+        textError.setText("Error de autentificación");
     }
     
 }

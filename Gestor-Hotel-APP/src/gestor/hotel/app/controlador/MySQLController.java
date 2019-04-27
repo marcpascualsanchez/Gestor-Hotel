@@ -65,8 +65,8 @@ public class MySQLController
         }
         query += " WHERE `"+ table + "`.`id` = " + id + ";";
         
+        System.out.println(query);
         this.commit(query);
-
   }
   
   private void commit(String query){
@@ -76,7 +76,7 @@ public class MySQLController
           Statement st = this.conn.createStatement();
           // execute the query, and get a java resultset
           int rs = st.executeUpdate(query);
-          System.out.println(rs);
+          //System.out.println(rs);
           st.close();
         }
         catch (Exception e)
@@ -103,7 +103,6 @@ public class MySQLController
               query += " WHERE " + conditions;
           }
           query += ";";
-          System.out.println(query);
 
           // create the java statement
           this.currentStatement = this.conn.createStatement();

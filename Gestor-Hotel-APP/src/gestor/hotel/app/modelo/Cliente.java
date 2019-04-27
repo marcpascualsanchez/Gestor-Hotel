@@ -15,7 +15,7 @@ import java.util.Map;
  *
  * @author user
  */
-public class Cliente implements Insertable, Deleteable, Updateable{
+public class Cliente extends Entity{
     //tabla
     public static String tableName = "cliente";
     
@@ -170,35 +170,20 @@ public class Cliente implements Insertable, Deleteable, Updateable{
     }
     /*END SETTERS & GETTERS*/
     
-    @Override
-    public void insert(MySQLController controller){
-        if(this.propertyMap != null){
-            controller.insert(tableName, this.propertyMap);
-        }else{
-            System.err.println("Parameter list property can't be null if insert is needed.");
-        }
+    public void insert(MySQLController mysqlC){
+        super.insert(mysqlC, this.tableName, this.propertyMap);
     }
     
-    @Override
-    public void delete(MySQLController controller){
-        controller.delete(tableName, this.id);
+    public void update(MySQLController mysqlC){
+        super.update(mysqlC, this.tableName, this.propertyMap, this.id);
     }
     
-    @Override
-    public void update(MySQLController controller){
-        controller.update(tableName, this.propertyMap, this.id);
+    public void delete(MySQLController mysqlC){
+        super.delete(mysqlC, this.tableName, this.id);
     }
     
     @Override
     public String toString(){
-        String result = ""; 
-        
-        for (int i = 0; i < (this.fieldNames.size() - 1); i++) {//no usamos iterador para controlar la ultima coma
-            result += this.fieldNames.get(i) + ": " + this.propertyMap.get(this.fieldNames.get(i)) + ", ";
-        }
-        
-        result += this.propertyMap.get((this.fieldNames.size() - 1));
-        
-        return result;
+        return super.toString(this.fieldNames, this.propertyMap);
     }
 }

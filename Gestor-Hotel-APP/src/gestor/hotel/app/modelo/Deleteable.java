@@ -12,5 +12,5 @@ import gestor.hotel.app.controlador.MySQLController;
  * @author user
  */
 public interface Deleteable {
-    public void delete(MySQLController controller);
+    public void delete(MySQLController controller, String tableName, int id);
 }

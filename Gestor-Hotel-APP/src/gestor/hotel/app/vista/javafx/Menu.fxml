@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="mainWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" stylesheets="@menu.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestor.hotel.app.controlador.MenuController">
+   <children>
+      <Label layoutX="275.0" layoutY="56.0" text="Gestionar" />
+      <Button fx:id="buttonClientes" layoutX="388.0" layoutY="141.0" mnemonicParsing="false" onAction="#enterIntoClientesManagement" prefHeight="41.0" prefWidth="140.0" text="Clientes" />
+      <Button fx:id="buttonReservas" layoutX="70.0" layoutY="253.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="140.0" text="Reservas" />
+      <Button fx:id="buttonUsuarios" layoutX="388.0" layoutY="253.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="140.0" text="Usuarios" />
+      <Button fx:id="buttonHabitaciones" layoutX="70.0" layoutY="141.0" mnemonicParsing="false" onAction="#enterIntoHabitacionesManagement" prefHeight="41.0" prefWidth="140.0" text="Habitaciones" />
+   </children>
+</AnchorPane>

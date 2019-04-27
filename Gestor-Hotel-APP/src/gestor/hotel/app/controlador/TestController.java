@@ -27,11 +27,11 @@ public class TestController {
         //probar inserts y deletes
         
         //campos: `cliente` (`id`, `nombre`, `dni`, `nacionalidad`, `telefono`, `email`, `ocupacion`, `estado_civil`, `id_usuario_creador`)
-        //Cliente c1 = new Cliente(0, "SERGI", "777", "cat", "0009", "seru@mail.com", "sonidista", "casat", 14);
-        //c1.insert(mysqlC);
+        //Cliente c1 = new Cliente(11, "Sergi", "777", "cat", "0009", "seru@mail.com", "sonidista", "casat", 14);
+        //c1.update(mysqlC);
         
-        //Habitacion h1 = new Habitacion(3, 17, 99.5f, 14);
-        //h1.update(mysqlC);
+        Habitacion h1 = new Habitacion(10, 110, 99.5f, 14);
+        h1.update(mysqlC);
         //h1.delete(mysqlC);
        
         /*

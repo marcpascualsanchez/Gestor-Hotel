@@ -6,12 +6,12 @@
 package gestor.hotel.app.modelo;
 
 import gestor.hotel.app.controlador.MySQLController;
+import java.util.Map;
 
 /**
  *
  * @author user
  */
 public interface Insertable {
-    public void insert(MySQLController controller);
-    public void setPropertyMap();
+    public void insert(MySQLController controller, String tableName, Map<String, String> propertyMap);
 }

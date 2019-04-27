@@ -16,7 +16,7 @@ import javafx.beans.property.SimpleIntegerProperty;
  *
  * @author user
  */
-public class Habitacion implements Insertable, Deleteable, Updateable{
+public class Habitacion extends Entity{
     //tabla
     public static String tableName = "habitacion";
     
@@ -86,11 +86,19 @@ public class Habitacion implements Insertable, Deleteable, Updateable{
     /*END OF SETTERS&GETTERS*/
     
     /*JavaFX SETTERS*/
+    public void setIdFX(SimpleIntegerProperty id){
+        this.numero = id.get();
+    }
+    
+    public SimpleIntegerProperty getIdFX(){
+        return new SimpleIntegerProperty(this.id);
+    }
+    
     public void setNumeroFX(SimpleIntegerProperty numero){
         this.numero = numero.get();
     }
     
-    public SimpleIntegerProperty getNumeroFX(SimpleIntegerProperty numero){
+    public SimpleIntegerProperty getNumeroFX(){
         return new SimpleIntegerProperty(this.numero);
     }
     
@@ -125,32 +133,21 @@ public class Habitacion implements Insertable, Deleteable, Updateable{
         this.propertyMap.put(this.fieldNames.get(3), String.valueOf(this.id_usuario_creador));
     }
     
-    @Override
-    public void insert(MySQLController controller){
-        controller.insert(tableName, this.propertyMap);
+    public void insert(MySQLController mysqlC){
+        super.insert(mysqlC, this.tableName, this.propertyMap);
     }
     
-    @Override
-    public void delete(MySQLController controller){
-        controller.delete(tableName, this.id);
+    public void update(MySQLController mysqlC){
+        super.update(mysqlC,this.tableName, this.propertyMap, this.id);
     }
     
-    @Override
-    public void update(MySQLController controller){
-        controller.update(tableName, this.propertyMap, this.id);
+    public void delete(MySQLController mysqlC){
+        super.delete(mysqlC, this.tableName, this.id);
     }
     
     @Override
     public String toString(){
-        String result = ""; 
-        
-        for (int i = 0; i < (this.fieldNames.size() - 1); i++) {//no usamos iterador para controlar la ultima coma
-            result += this.fieldNames.get(i) + ": " + this.propertyMap.get(this.fieldNames.get(i)) + ", ";
-        }
-        
-        result += this.propertyMap.get((this.fieldNames.size() - 1));
-        
-        return result;
+        return super.toString(this.fieldNames, this.propertyMap);
     }
 }
 

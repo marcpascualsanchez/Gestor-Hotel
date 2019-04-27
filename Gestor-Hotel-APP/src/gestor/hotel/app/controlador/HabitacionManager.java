@@ -21,12 +21,16 @@ public class HabitacionManager extends EntityManager{
     public MySQLController controller;
     
     HabitacionManager(MySQLController controller){ 
-        this.habitacionList = new ArrayList<>();
         this.controller = controller;
+    }
+    
+    public ArrayList<Habitacion> getHabitacionList(){
+        return this.habitacionList;
     }
     
     @Override
     public void load(){
+        this.habitacionList = new ArrayList<>();
         ResultSet results;
         Habitacion currentHabitacion;
         

@@ -5,12 +5,12 @@
  */
 package gestor.hotel.app.modelo;
 import gestor.hotel.app.controlador.MySQLController;
+import java.util.Map;
 
 /**
  *
  * @author daw2
  */
 public interface Updateable {
-    public void update(MySQLController controller);
-    public void setPropertyMap();
+    public void update(MySQLController controller, String tableName, Map<String, String> propertyMap, int id);
 }

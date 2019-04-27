@@ -6,7 +6,7 @@
 package gestor.hotel.app;
 
 import gestor.hotel.app.controlador.MySQLController;
-import gestor.hotel.app.vista.javafx.LoginController;
+import gestor.hotel.app.controlador.LoginController;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
