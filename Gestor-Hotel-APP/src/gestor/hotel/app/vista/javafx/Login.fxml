@@ -10,7 +10,7 @@
 
 <AnchorPane id="AnchorPane" fx:id="mainWindow" prefHeight="400.0" prefWidth="600.0" style="-fx-border-radius: 10px;" styleClass="mainColorBackground" stylesheets="/gestor/hotel/app/vista/general.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestor.hotel.app.controlador.LoginController">
    <children>
-      <Label layoutX="243.0" layoutY="106.0" prefHeight="21.0" prefWidth="115.0" stylesheets="@../general.css" text="Gestor de Hotel">
+      <Label layoutX="243.0" layoutY="106.0" prefHeight="21.0" prefWidth="115.0" stylesheets="general.css" text="Gestor de Hotel">
          <styleClass>
             <String fx:value="mainTitle" />
             <String fx:value="mainLetterColor" />
@@ -21,8 +21,8 @@
             <String fx:value="mainButton" />
             <String fx:value="secondaryLetterColor" />
          </styleClass></Button>
-      <Label layoutX="228.0" layoutY="227.0" styleClass="mainLetterColor" stylesheets="@../general.css" text="Contraseña" />
-      <Label layoutX="226.0" layoutY="161.0" styleClass="mainLetterColor" stylesheets="@../general.css" text="Usuario" />
+      <Label layoutX="228.0" layoutY="227.0" styleClass="mainLetterColor" stylesheets="general.css" text="Contraseña" />
+      <Label layoutX="226.0" layoutY="161.0" styleClass="mainLetterColor" stylesheets="general.css" text="Usuario" />
       <PasswordField fx:id="textAreaPassword" layoutX="226.0" layoutY="252.0" />
       <Text fx:id="textError" fill="#b52020" layoutX="236.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="130.0" />
    </children>

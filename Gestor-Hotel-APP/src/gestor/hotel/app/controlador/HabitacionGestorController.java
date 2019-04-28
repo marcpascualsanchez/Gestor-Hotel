@@ -72,6 +72,7 @@ public class HabitacionGestorController extends FXController implements Initiali
         
         listaHabitacionesTabla = FXCollections.observableArrayList(this.habitacionManager.getHabitacionList());
         
+        
         this.tablaGestorHabitaciones.setItems(listaHabitacionesTabla);
     }
   

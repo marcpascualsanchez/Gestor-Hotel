@@ -23,7 +23,6 @@ public class Cliente extends Entity{
     public static List<String> fieldNames = new ArrayList<>(
         Arrays.asList("id", "nombre", "dni", "nacionalidad", "telefono", "email", "ocupacion", "estado_civil", "id_usuario_creador")
     );
-    public int id;
     public String nombre;
     public String dni;
     public String nacionalidad;

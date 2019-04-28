@@ -5,11 +5,11 @@
  */
 package gestor.hotel.app.controlador;
 
-import gestor.hotel.app.modelo.Cliente;
+/*import gestor.hotel.app.modelo.Cliente;
 import gestor.hotel.app.modelo.Habitacion;
 import gestor.hotel.app.modelo.Hospedaje;
 import java.sql.Date;
-import java.util.Calendar;
+import java.util.Calendar;*/
 
 /**
  *
@@ -18,14 +18,15 @@ import java.util.Calendar;
 public class TestController {
     /*SOLO PARA TESTEAR CODIGO COMO DEV*/
     
-    private static String mysqlUrl = "jdbc:mysql://localhost/proyecto_hotel";
+    /*private static String mysqlUrl = "jdbc:mysql://localhost/proyecto_hotel";
     private static String mysqlUser = "root";
     private static String mysqlPass = "";
+    */
     
 
     public static void main(String[] args) {
-        MySQLController mysqlC = new MySQLController(mysqlUrl, mysqlUser, mysqlPass);
-        mysqlC.connect();
+        //MySQLController mysqlC = new MySQLController(mysqlUrl, mysqlUser, mysqlPass);
+        //mysqlC.connect();
         
         //probar inserts y deletes
         

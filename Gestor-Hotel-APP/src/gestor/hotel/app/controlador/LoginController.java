@@ -45,7 +45,7 @@ public class LoginController extends FXController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        System.out.println("initializing...");
+        //System.out.println("initializing...");
     }   
     
     public void enterIntoMenu(){
@@ -81,13 +81,11 @@ public class LoginController extends FXController implements Initializable {
     }
     
     public void login(){
-        System.out.println(GestorHotelAPP.currentUsuarioPermission);
         if(this.validateEnter()){
             this.enterIntoMenu();
         }else{
             this.showError();
         }
-        System.out.println(GestorHotelAPP.currentUsuarioPermission);
     }
     
     public void showError(){

@@ -43,13 +43,11 @@ public class MySQLController
             i++;
         }
       
-      System.out.println(query);
       this.commit(query);
   }
   
   public void delete(String table, int id){
       String query = "DELETE FROM `" + table + "` WHERE `" + table + "`.`id` = " + id;
-      System.out.println(query);
       this.commit(query);
   }
   
@@ -67,7 +65,6 @@ public class MySQLController
         }
         query += " WHERE `"+ table + "`.`id` = " + id + ";";
         
-        System.out.println(query);
         this.commit(query);
   }
   

@@ -11,41 +11,41 @@
 
 <AnchorPane fx:id="mainWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="801.0" stylesheets="/gestor/hotel/app/vista/general.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestor.hotel.app.controlador.UsuarioGestorController">
    <children>
-      <SplitPane dividerPositions="0.29797979797979796" prefHeight="500.0" prefWidth="800.0" styleClass="secondaryColorBackground" stylesheets="@../general.css">
+      <SplitPane dividerPositions="0.29797979797979796" prefHeight="500.0" prefWidth="800.0" styleClass="secondaryColorBackground" stylesheets="general.css">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonInsert" layoutX="30.0" layoutY="442.0" mnemonicParsing="false" onAction="#insert" prefHeight="26.0" prefWidth="78.0" stylesheets="@../general.css" text="Insertar">
+                  <Button fx:id="buttonInsert" layoutX="30.0" layoutY="442.0" mnemonicParsing="false" onAction="#insert" prefHeight="26.0" prefWidth="78.0" stylesheets="general.css" text="Insertar">
                      <styleClass>
                         <String fx:value="mainButton" />
                         <String fx:value="secondaryLetterColor" />
                      </styleClass></Button>
                   <TextField fx:id="textFieldNombre" layoutX="18.0" layoutY="80.0" prefHeight="26.0" prefWidth="200.0" />
-                  <Label layoutX="14.0" layoutY="14.0" stylesheets="@../general.css" text="Informacion">
+                  <Label layoutX="14.0" layoutY="14.0" stylesheets="general.css" text="Informacion">
                      <styleClass>
                         <String fx:value="mainTitle" />
                         <String fx:value="secondaryLetterColor" />
                      </styleClass></Label>
-                  <Label layoutX="14.0" layoutY="54.0" prefHeight="26.0" prefWidth="78.0" styleClass="mainLetterColor" stylesheets="@../general.css" text="Usuario" />
-                  <Label layoutX="13.0" layoutY="111.0" prefHeight="26.0" prefWidth="78.0" styleClass="mainLetterColor" stylesheets="@../general.css" text="Contraseña" />
-                  <Button fx:id="buttonDelete" layoutX="118.0" layoutY="442.0" mnemonicParsing="false" onAction="#delete" prefHeight="26.0" prefWidth="78.0" stylesheets="@../general.css" text="Eliminar">
+                  <Label layoutX="14.0" layoutY="54.0" prefHeight="26.0" prefWidth="78.0" styleClass="mainLetterColor" stylesheets="general.css" text="Usuario" />
+                  <Label layoutX="13.0" layoutY="111.0" prefHeight="26.0" prefWidth="78.0" styleClass="mainLetterColor" stylesheets="general.css" text="Contraseña" />
+                  <Button fx:id="buttonDelete" layoutX="118.0" layoutY="442.0" mnemonicParsing="false" onAction="#delete" prefHeight="26.0" prefWidth="78.0" stylesheets="general.css" text="Eliminar">
                      <styleClass>
                         <String fx:value="mainButton" />
                         <String fx:value="secondaryLetterColor" />
                      </styleClass></Button>
-                  <Button fx:id="buttonUpdate" layoutX="30.0" layoutY="398.0" mnemonicParsing="false" onAction="#update" prefHeight="26.0" prefWidth="166.0" stylesheets="@../general.css" text="Modificar">
+                  <Button fx:id="buttonUpdate" layoutX="30.0" layoutY="398.0" mnemonicParsing="false" onAction="#update" prefHeight="26.0" prefWidth="166.0" stylesheets="general.css" text="Modificar">
                      <styleClass>
                         <String fx:value="mainButton" />
                         <String fx:value="secondaryLetterColor" />
                      </styleClass></Button>
-                  <Label layoutX="14.0" layoutY="366.0" styleClass="mainTitle" stylesheets="@../general.css" text="Gestionar" />
+                  <Label layoutX="14.0" layoutY="366.0" styleClass="mainTitle" stylesheets="general.css" text="Gestionar" />
                   <TextField fx:id="textFieldClave" layoutX="18.0" layoutY="137.0" prefHeight="26.0" prefWidth="200.0" />
-                  <Button fx:id="back" layoutX="161.0" layoutY="10.0" mnemonicParsing="false" onAction="#enterIntoMenu" stylesheets="@../general.css" text="Volver">
+                  <Button fx:id="back" layoutX="161.0" layoutY="10.0" mnemonicParsing="false" onAction="#enterIntoMenu" stylesheets="general.css" text="Volver">
                      <styleClass>
                         <String fx:value="mainButton" />
                         <String fx:value="secondaryLetterColor" />
                      </styleClass></Button>
-                  <Label layoutX="18.0" layoutY="172.0" prefHeight="26.0" prefWidth="78.0" styleClass="mainLetterColor" stylesheets="@../general.css" text="Administrador" />
+                  <Label layoutX="18.0" layoutY="172.0" prefHeight="26.0" prefWidth="78.0" styleClass="mainLetterColor" stylesheets="general.css" text="Administrador" />
                   <TextField fx:id="textFieldAdmin" layoutX="18.0" layoutY="198.0" prefHeight="26.0" prefWidth="78.0" />
                </children>
             </AnchorPane>

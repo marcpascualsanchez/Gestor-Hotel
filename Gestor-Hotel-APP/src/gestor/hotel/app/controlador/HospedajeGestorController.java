@@ -88,19 +88,19 @@ public class HospedajeGestorController extends FXController implements Initializ
     
     private void loadTabla(){
         this.hospedajeManager.load();
-        /*
+       /* 
         System.out.println(this.hospedajeManager.getHospedajeList());
         System.out.println(this.hospedajeManager.getHospedajeList().get(0).toString());
         System.out.println(this.hospedajeManager.getHospedajeList().get(0).getIdCliente());
-        */
+       */
+        
         this.columnId.setCellValueFactory(new PropertyValueFactory("id"));
         this.columnIdCliente.setCellValueFactory(new PropertyValueFactory("id_cliente"));
         this.columnIdHabitacion.setCellValueFactory(new PropertyValueFactory("id_habitacion"));
         this.columnFechaInicio.setCellValueFactory(new PropertyValueFactory("fecha_inicio"));
         this.columnFechaFinal.setCellValueFactory(new PropertyValueFactory("fecha_final"));
         
-        listaHospedajesTabla = FXCollections.observableArrayList(this.hospedajeManager.getHospedajeList());
-        //System.out.println(listaHospedajesTabla.toString());
+        this.listaHospedajesTabla = FXCollections.observableArrayList(this.hospedajeManager.getHospedajeList());
         
         this.tablaGestorHospedajes.setItems(listaHospedajesTabla);
     }
