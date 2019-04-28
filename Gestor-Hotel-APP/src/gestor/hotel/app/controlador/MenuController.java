@@ -39,4 +39,8 @@ public class MenuController extends FXController implements Initializable {
         changeWindow(mainWindow, "/gestor/hotel/app/vista/javafx/UsuarioGestor.fxml", "Gestor de Usuarios");
     }
     
+    public void enterIntoLogin(){
+        changeWindow(mainWindow, "/gestor/hotel/app/vista/javafx/Login.fxml", "Login");
+    }
+    
 }

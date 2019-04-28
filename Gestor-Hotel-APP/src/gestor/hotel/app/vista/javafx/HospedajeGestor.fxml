@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="671.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="gestor.hotel.app.controlador.HospedajeGestorController">
+    <children>
+      <SplitPane dividerPositions="0.29826732673267325" prefHeight="500.0" prefWidth="798.0">
+        <items>
+          <AnchorPane fx:id="mainWindow" minHeight="0.0" minWidth="0.0" prefHeight="498.0" prefWidth="248.0" styleClass="secondaryColorBackground" stylesheets="@../general.css">
+               <children>
+                  <Button fx:id="buttonInsert" layoutX="30.0" layoutY="442.0" mnemonicParsing="false" onAction="#insert" prefHeight="26.0" prefWidth="78.0" stylesheets="@../general.css" text="Insertar">
+                     <styleClass>
+                        <String fx:value="mainButton" />
+                        <String fx:value="secondaryLetterColor" />
+                     </styleClass></Button>
+                  <Label layoutX="14.0" layoutY="14.0" styleClass="mainTitle" stylesheets="@../general.css" text="Informacion" />
+                  <Label layoutX="18.0" layoutY="48.0" prefHeight="26.0" prefWidth="180.0" styleClass="mainLetterColor" stylesheets="@../general.css" text="Cliente" />
+                  <Button fx:id="buttonDelete" layoutX="118.0" layoutY="442.0" mnemonicParsing="false" onAction="#delete" prefHeight="26.0" prefWidth="78.0" stylesheets="@../general.css" text="Eliminar">
+                     <styleClass>
+                        <String fx:value="mainButton" />
+                        <String fx:value="secondaryLetterColor" />
+                     </styleClass></Button>
+                  <Button fx:id="buttonUpdate" layoutX="30.0" layoutY="398.0" mnemonicParsing="false" onAction="#update" prefHeight="26.0" prefWidth="166.0" stylesheets="@../general.css" text="Modificar">
+                     <styleClass>
+                        <String fx:value="mainButton" />
+                        <String fx:value="secondaryLetterColor" />
+                     </styleClass></Button>
+                  <Label layoutX="14.0" layoutY="366.0" styleClass="mainLetterColor" stylesheets="@../general.css" text="Gestionar" />
+                  <Button fx:id="back" layoutX="161.0" layoutY="10.0" mnemonicParsing="false" onAction="#enterIntoMenu" stylesheets="@../general.css" text="Volver">
+                     <styleClass>
+                        <String fx:value="mainButton" />
+                        <String fx:value="secondaryLetterColor" />
+                     </styleClass></Button>
+                  <Label layoutX="18.0" layoutY="100.0" prefHeight="26.0" prefWidth="180.0" styleClass="mainLetterColor" stylesheets="@../general.css" text="Habitación" />
+                  <ChoiceBox layoutX="17.0" layoutY="74.0" prefHeight="25.0" prefWidth="180.0" />
+                  <TextField fx:id="textFieldNacionalidad1" layoutX="18.0" layoutY="178.0" prefHeight="26.0" prefWidth="180.0" />
+                  <Label layoutX="18.0" layoutY="152.0" prefHeight="26.0" prefWidth="180.0" styleClass="mainLetterColor" stylesheets="@../general.css" text="Fecha de Inicio" />
+                  <Label layoutX="18.0" layoutY="204.0" prefHeight="26.0" prefWidth="180.0" styleClass="mainLetterColor" stylesheets="@../general.css" text="Fecha Final" />
+                  <TextField fx:id="textFieldNacionalidad11" layoutX="18.0" layoutY="230.0" prefHeight="26.0" prefWidth="180.0" />
+                  <ChoiceBox layoutX="17.0" layoutY="126.0" prefHeight="25.0" prefWidth="180.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="498.0" prefWidth="529.0">
+               <children>
+                  <TableView fx:id="tablaGestorClientes" prefHeight="500.0" prefWidth="554.0">
+                    <columns>
+                      <TableColumn fx:id="columnId" prefWidth="42.0" text="Id" />
+                        <TableColumn fx:id="columnHabitacion" prefWidth="96.0" text="Id Habitación" />
+                        <TableColumn fx:id="columnDNI" prefWidth="119.0" text="Id Cliente" />
+                        <TableColumn fx:id="columnNacionalidad" prefWidth="150.0" text="Fecha Inicio" />
+                        <TableColumn fx:id="columnTelefono" prefWidth="150.0" text="Fecha Final" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

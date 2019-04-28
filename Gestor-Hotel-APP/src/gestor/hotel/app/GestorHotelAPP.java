@@ -16,6 +16,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -41,6 +42,7 @@ public class GestorHotelAPP extends Application {
             Scene scene = new Scene(root);
             primaryStage.setTitle("Login");
             primaryStage.setScene(scene);
+            primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("vista/img/icon.png")));
             primaryStage.show();
         } 
         catch (NullPointerException ex) 

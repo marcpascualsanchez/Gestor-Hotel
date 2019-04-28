@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -29,6 +30,7 @@ public class FXController {
             Scene scene = new Scene(root);
             nextStage.setTitle(windowTitle);
             nextStage.setScene(scene);
+            nextStage.getIcons().add(new Image(getClass().getResourceAsStream("/gestor/hotel/app/vista/img/icon.png")));
             
             nextStage.initOwner(previousWindow.getScene().getWindow());
             ((Stage)previousWindow.getScene().getWindow()).close();
