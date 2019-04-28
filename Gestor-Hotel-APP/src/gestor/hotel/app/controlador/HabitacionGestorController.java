@@ -14,12 +14,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.beans.property.SimpleFloatProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -36,11 +33,6 @@ public class HabitacionGestorController extends FXController implements Initiali
     
     //main window
     @FXML private AnchorPane mainWindow;
-
-    //buttons
-    @FXML private Button buttonUpdate;
-    @FXML private Button buttonInsert;
-    @FXML private Button buttonDelete;
     
     //textfields
     @FXML private TextField textFieldPrecio;
@@ -82,7 +74,7 @@ public class HabitacionGestorController extends FXController implements Initiali
         
         this.tablaGestorHabitaciones.setItems(listaHabitacionesTabla);
     }
-    
+  
     @FXML
     private void insert(ActionEvent event){
         Habitacion insertedHabitacion;
@@ -97,8 +89,8 @@ public class HabitacionGestorController extends FXController implements Initiali
         insertedHabitacion.setPropertyMap();
 
         insertedHabitacion.insert(GestorHotelAPP.mysqlC);
-        this.resetTextFields();
         this.loadTabla();
+        this.resetTextFields();
         
     }
     
@@ -123,8 +115,8 @@ public class HabitacionGestorController extends FXController implements Initiali
         
         if(currentHabitacion != null){
             currentHabitacion.delete(GestorHotelAPP.mysqlC);
-            this.resetTextFields();
             this.loadTabla();
+            this.resetTextFields();
         }
 
     }

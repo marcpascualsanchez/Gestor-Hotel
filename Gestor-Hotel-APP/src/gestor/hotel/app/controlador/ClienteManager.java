@@ -30,6 +30,7 @@ public class ClienteManager extends EntityManager{
         Cliente currentCliente;
         
         try{
+          this.clienteList = new ArrayList<>();
           results = this.controller.select("*", tableName, "");
           
          // iterate through the java resultset
@@ -58,6 +59,10 @@ public class ClienteManager extends EntityManager{
           System.err.println("Got an exception loading BDD data in class " + this.getClass().getName());
           System.err.println(e.getMessage());
         }
+    }
+    
+    public List getClienteList(){
+        return this.clienteList;
     }
     
     @Override

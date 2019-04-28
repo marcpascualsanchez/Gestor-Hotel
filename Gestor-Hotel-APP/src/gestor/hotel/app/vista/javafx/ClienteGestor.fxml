@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestor.hotel.app.controlador.ClienteGestorController">
+<children>
+      <SplitPane dividerPositions="0.21643286573146292" prefHeight="500.0" prefWidth="1056.0">
+        <items>
+          <AnchorPane fx:id="mainWindow" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="buttonInsert" layoutX="30.0" layoutY="442.0" mnemonicParsing="false" onAction="#insert" prefHeight="26.0" prefWidth="78.0" text="Insertar" />
+                  <TextField fx:id="textFieldDNI" layoutX="14.0" layoutY="145.0" prefHeight="26.0" prefWidth="78.0" />
+                  <Label layoutX="14.0" layoutY="14.0" text="Informacion" />
+                  <Label layoutX="14.0" layoutY="119.0" prefHeight="26.0" prefWidth="78.0" text="DNI" />
+                  <Label layoutX="15.0" layoutY="53.0" prefHeight="26.0" prefWidth="78.0" text="Nombre" />
+                  <Button fx:id="buttonDelete" layoutX="118.0" layoutY="442.0" mnemonicParsing="false" onAction="#delete" prefHeight="26.0" prefWidth="78.0" text="Eliminar" />
+                  <Button fx:id="buttonUpdate" layoutX="30.0" layoutY="398.0" mnemonicParsing="false" onAction="#update" prefHeight="26.0" prefWidth="166.0" text="Modificar" />
+                  <Label layoutX="14.0" layoutY="366.0" text="Gestionar" />
+                  <TextField fx:id="textFieldNombre" layoutX="15.0" layoutY="79.0" prefHeight="26.0" prefWidth="180.0" />
+                  <Button fx:id="back" layoutX="161.0" layoutY="10.0" mnemonicParsing="false" onAction="#enterIntoMenu" text="Volver" />
+                  <Label layoutX="14.0" layoutY="171.0" prefHeight="26.0" prefWidth="78.0" text="Teléfono" />
+                  <TextField fx:id="textFieldTelefono" layoutX="14.0" layoutY="197.0" prefHeight="26.0" prefWidth="78.0" />
+                  <TextField fx:id="textFieldEmail" layoutX="117.0" layoutY="197.0" prefHeight="26.0" prefWidth="78.0" />
+                  <Label layoutX="118.0" layoutY="171.0" prefHeight="26.0" prefWidth="78.0" text="Email" />
+                  <Label layoutX="14.0" layoutY="223.0" prefHeight="26.0" prefWidth="78.0" text="Ocupación" />
+                  <TextField fx:id="textFieldOcupacion" layoutX="14.0" layoutY="249.0" prefHeight="26.0" prefWidth="78.0" />
+                  <Label layoutX="118.0" layoutY="223.0" prefHeight="26.0" prefWidth="78.0" text="Estado Civil" />
+                  <TextField fx:id="textFieldEstadoCivil" layoutX="117.0" layoutY="249.0" prefHeight="26.0" prefWidth="78.0" />
+                  <TextField fx:id="textFieldNacionalidad" layoutX="117.0" layoutY="145.0" prefHeight="26.0" prefWidth="78.0" />
+                  <Label layoutX="117.0" layoutY="119.0" prefHeight="26.0" prefWidth="78.0" text="Nacionalidad" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="498.0" prefWidth="737.0">
+               <children>
+                  <TableView fx:id="tablaGestorClientes" prefHeight="500.0" prefWidth="823.0">
+                    <columns>
+                      <TableColumn fx:id="columnId" prefWidth="42.0" text="Id" />
+                        <TableColumn fx:id="columnNombre" prefWidth="123.0" text="Nombre" />
+                        <TableColumn fx:id="columnDNI" prefWidth="94.0" text="DNI" />
+                        <TableColumn fx:id="columnNacionalidad" prefWidth="83.0" text="Nacionalidad" />
+                        <TableColumn fx:id="columnTelefono" prefWidth="116.0" text="Teléfono" />
+                        <TableColumn fx:id="columnEmail" prefWidth="134.0" text="Email" />
+                        <TableColumn fx:id="columnOcupacion" prefWidth="122.0" text="Ocupación" />
+                        <TableColumn fx:id="columnEstadoCivil" prefWidth="108.0" text="Estado Civil" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
