@@ -30,7 +30,7 @@ public class HospedajeManager extends EntityManager{
     
     @Override
     public void load(){
-        this.hospedajeList = new ArrayList<>();
+        this.hospedajeList = new ArrayList();
         ResultSet results;
         Hospedaje currentHospedaje;
         
@@ -44,7 +44,7 @@ public class HospedajeManager extends EntityManager{
             
             currentHospedaje.setId(results.getInt("id"));   
             currentHospedaje.setIdCliente(results.getInt("id_cliente"));
-            currentHospedaje.setIdCliente(results.getInt("id_habitacion"));
+            currentHospedaje.setIdHabitacion(results.getInt("id_habitacion"));
             currentHospedaje.setFechaInicio(results.getDate("fecha_inicio"));
             currentHospedaje.setFechaFinal(results.getDate("fecha_final"));
             currentHospedaje.setId_usuario_creador(results.getInt("id_usuario_creador"));
@@ -53,6 +53,7 @@ public class HospedajeManager extends EntityManager{
 
             this.hospedajeList.add(currentHospedaje);
           }
+          //System.out.println(this.toString());
         this.controller.closeStatement();
         }
         catch (Exception e)
@@ -66,8 +67,8 @@ public class HospedajeManager extends EntityManager{
     public String toString(){
         String result = "";
         
-        for (Hospedaje currentHabitacion : this.hospedajeList) {
-            result += currentHabitacion.toString() + "\n";
+        for (Hospedaje currentHospedaje : this.hospedajeList) {
+            result += currentHospedaje.toString() + "\n";
         }
         
         return result;

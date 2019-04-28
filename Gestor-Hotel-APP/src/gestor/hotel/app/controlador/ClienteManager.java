@@ -61,8 +61,19 @@ public class ClienteManager extends EntityManager{
         }
     }
     
-    public List getClienteList(){
+    public ArrayList<Cliente> getClienteList(){
         return this.clienteList;
+    }
+    
+    public Cliente getClienteById(int id){
+        Cliente result = null;
+        for(Cliente currentCliente : this.clienteList){
+            if(currentCliente.getId()==id){
+                result = currentCliente;
+            }
+        }
+        
+        return result;
     }
     
     @Override

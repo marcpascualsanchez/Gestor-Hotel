@@ -32,6 +32,8 @@ public class GestorHotelAPP extends Application {
     private static String mysqlPass = "";
     public static MySQLController mysqlC;
     
+    public static int currentUsuarioPermission = 0;//el permiso que tiene el que inicia la session en el login
+    
     @Override
     public void start(Stage primaryStage) {
         
@@ -62,6 +64,10 @@ public class GestorHotelAPP extends Application {
         mysqlC = new MySQLController(mysqlUrl, mysqlUser, mysqlPass);
         mysqlC.connect();
         launch(args);
+    }
+    
+    public static void setCurrentUsuarioPermission(int permission){
+        currentUsuarioPermission = permission;
     }
     
 }

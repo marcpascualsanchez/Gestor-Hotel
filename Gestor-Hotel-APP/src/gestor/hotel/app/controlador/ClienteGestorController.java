@@ -78,15 +78,15 @@ public class ClienteGestorController extends FXController implements Initializab
     private void loadTabla(){
         this.clienteManager.load();
         
-        this.columnId.setCellValueFactory(new PropertyValueFactory<Cliente,String>("id"));
-        this.columnNombre.setCellValueFactory(new PropertyValueFactory<Cliente,String>("nombre"));
-        this.columnDNI.setCellValueFactory(new PropertyValueFactory<Cliente,String>("dni"));
-        this.columnOcupacion.setCellValueFactory(new PropertyValueFactory<Cliente,String>("ocupacion"));
-        this.columnNacionalidad.setCellValueFactory(new PropertyValueFactory<Cliente,String>("nacionalidad"));
-        this.columnTelefono.setCellValueFactory(new PropertyValueFactory<Cliente,String>("telefono"));
-        this.columnEmail.setCellValueFactory(new PropertyValueFactory<Cliente,String>("email"));
-        this.columnOcupacion.setCellValueFactory(new PropertyValueFactory<Cliente,String>("ocupacion"));
-        this.columnEstadoCivil.setCellValueFactory(new PropertyValueFactory<Cliente,String>("estado_civil"));
+        this.columnId.setCellValueFactory(new PropertyValueFactory("id"));
+        this.columnNombre.setCellValueFactory(new PropertyValueFactory("nombre"));
+        this.columnDNI.setCellValueFactory(new PropertyValueFactory("dni"));
+        this.columnOcupacion.setCellValueFactory(new PropertyValueFactory("ocupacion"));
+        this.columnNacionalidad.setCellValueFactory(new PropertyValueFactory("nacionalidad"));
+        this.columnTelefono.setCellValueFactory(new PropertyValueFactory("telefono"));
+        this.columnEmail.setCellValueFactory(new PropertyValueFactory("email"));
+        this.columnOcupacion.setCellValueFactory(new PropertyValueFactory("ocupacion"));
+        this.columnEstadoCivil.setCellValueFactory(new PropertyValueFactory("estado_civil"));
         
         listaClientesTabla = FXCollections.observableArrayList(this.clienteManager.getClienteList());
         
@@ -203,7 +203,7 @@ public class ClienteGestorController extends FXController implements Initializab
     }
     
     public void enterIntoMenu(){
-        changeWindow(mainWindow, "/gestor/hotel/app/vista/javafx/Menu.fxml", "Login");
+        changeWindow(mainWindow, "/gestor/hotel/app/vista/javafx/Menu.fxml", "Menú principal");
     }
     
 }

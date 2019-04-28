@@ -10,9 +10,6 @@ import java.util.*;
  *
  * @author user
  */
-public abstract class EntityManager {
-    public static String tableName;
-    public List<String> paramList;
-    
+public abstract class EntityManager {   
     public abstract void load();
 }

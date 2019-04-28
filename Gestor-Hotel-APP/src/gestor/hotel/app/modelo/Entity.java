@@ -18,6 +18,15 @@ import java.util.Map;
  */
 public class Entity implements Insertable, Deleteable, Updateable{  
     public void setPropertyMap(){};
+    public int id;
+    
+    public int getId(){
+        return this.id;
+    }
+    
+    public void setId(int id){
+        this.id = id;
+    }
     
     @Override
     public void insert(MySQLController controller, String tableName, Map<String, String> propertyMap){
@@ -45,7 +54,7 @@ public class Entity implements Insertable, Deleteable, Updateable{
             result += fieldNames.get(i) + ": " + propertyMap.get(fieldNames.get(i)) + ", ";
         }
         
-        result += propertyMap.get((fieldNames.size() - 1));
+        result += fieldNames.get(fieldNames.size() - 1) + ": " + propertyMap.get(fieldNames.get(fieldNames.size() - 1));
         
         return result;
     }

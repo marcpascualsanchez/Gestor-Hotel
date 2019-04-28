@@ -5,11 +5,13 @@
  */
 package gestor.hotel.app.controlador;
 
+import gestor.hotel.app.GestorHotelAPP;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
@@ -18,6 +20,7 @@ import javafx.scene.layout.AnchorPane;
  */
 public class MenuController extends FXController implements Initializable {
     @FXML AnchorPane mainWindow;
+    @FXML private Text textError;
 
     /**
      * Initializes the controller class.
@@ -36,11 +39,23 @@ public class MenuController extends FXController implements Initializable {
     }
     
     public void enterIntoUsuariosManagement(){
-        changeWindow(mainWindow, "/gestor/hotel/app/vista/javafx/UsuarioGestor.fxml", "Gestor de Usuarios");
+        if(GestorHotelAPP.currentUsuarioPermission == 1){
+            changeWindow(mainWindow, "/gestor/hotel/app/vista/javafx/UsuarioGestor.fxml", "Gestor de Usuarios");
+        }else{
+            this.showError();
+        }
+    }
+    
+    public void enterIntoHospedajesManagement(){
+        changeWindow(mainWindow, "/gestor/hotel/app/vista/javafx/HospedajeGestor.fxml", "Login");
     }
     
     public void enterIntoLogin(){
         changeWindow(mainWindow, "/gestor/hotel/app/vista/javafx/Login.fxml", "Login");
+    }
+    
+    public void showError(){
+        textError.setText("Error de permisos.");
     }
     
 }

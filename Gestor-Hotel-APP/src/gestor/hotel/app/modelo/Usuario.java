@@ -27,7 +27,6 @@ public class Usuario extends Entity{
         Arrays.asList("id", "nombre", "clave", "admin", "id_usuario_creador")
     );
 
-    public int id;
     public String nombre;
     public String clave;
     public int admin;
@@ -52,13 +51,6 @@ public class Usuario extends Entity{
     }
     
     /*SETTERS&GETTERS*/
-    public int getId(){
-        return this.id;
-    }
-
-    public void setId(int id){
-        this.id = id;
-    }
         
     public String getNombre(){
         return this.nombre;

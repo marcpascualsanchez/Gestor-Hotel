@@ -57,7 +57,7 @@ public class LoginController extends FXController implements Initializable {
         String user = textAreaUser.getText();
         String pass = textAreaPassword.getText();
         String conditions = "nombre='" + user + "' AND clave='" + pass +"'";//SQL conditions
-        String fields = "nombre, clave";
+        String fields = "*";
         String table = "usuario";
         ResultSet resultsSQL;
         
@@ -68,6 +68,7 @@ public class LoginController extends FXController implements Initializable {
           resultsSQL.next();
           if( (resultsSQL.getString("nombre").equals(user)) && (resultsSQL.getString("clave").equals(pass)) ){
               result = true;
+              GestorHotelAPP.setCurrentUsuarioPermission(resultsSQL.getInt("admin"));
           }
         }
         catch (Exception e)
@@ -80,12 +81,13 @@ public class LoginController extends FXController implements Initializable {
     }
     
     public void login(){
-        System.out.println("log in...");
-        //if(this.validateEnter()){
+        System.out.println(GestorHotelAPP.currentUsuarioPermission);
+        if(this.validateEnter()){
             this.enterIntoMenu();
-        /*}else{
+        }else{
             this.showError();
-        }*/
+        }
+        System.out.println(GestorHotelAPP.currentUsuarioPermission);
     }
     
     public void showError(){

@@ -60,6 +60,17 @@ public class HabitacionManager extends EntityManager{
         }
     }
     
+    public Habitacion getHabitacionById(int id){
+        Habitacion result = null;
+        for(Habitacion currentHabitacion : this.habitacionList){
+            if(currentHabitacion.getId() == id){
+                result = currentHabitacion;
+            }
+        }
+        
+        return result;
+    }
+    
     @Override
     public String toString(){
         String result = "";

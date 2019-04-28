@@ -7,6 +7,9 @@ package gestor.hotel.app.controlador;
 
 import gestor.hotel.app.modelo.Cliente;
 import gestor.hotel.app.modelo.Habitacion;
+import gestor.hotel.app.modelo.Hospedaje;
+import java.sql.Date;
+import java.util.Calendar;
 
 /**
  *
@@ -30,9 +33,12 @@ public class TestController {
         //Cliente c1 = new Cliente(11, "Sergi", "777", "cat", "0009", "seru@mail.com", "sonidista", "casat", 14);
         //c1.update(mysqlC);
         
-        Habitacion h1 = new Habitacion(10, 110, 99.5f, 14);
-        h1.update(mysqlC);
+        //Habitacion h1 = new Habitacion(10, 110, 99.5f, 14);
+        //h1.update(mysqlC);
         //h1.delete(mysqlC);
+        //Hospedaje hos1 = new Hospedaje(4, 2, 1, new Date(Calendar.getInstance().getTime().getTime()), new Date(Calendar.getInstance().getTime().getTime()), 14);
+        //System.out.println(hos1.toString());
+        //hos1.delete(mysqlC);
        
         /*
         //cargar datos de bdd a nuestra app

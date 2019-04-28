@@ -168,7 +168,7 @@ public class UsuarioGestorController extends FXController implements Initializab
     }
     
     public void enterIntoMenu(){
-        changeWindow(mainWindow, "/gestor/hotel/app/vista/javafx/Menu.fxml", "Login");
+        changeWindow(mainWindow, "/gestor/hotel/app/vista/javafx/Menu.fxml", "Menú principal");
     }
     
 }

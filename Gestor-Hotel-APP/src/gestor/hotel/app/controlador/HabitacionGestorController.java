@@ -66,9 +66,9 @@ public class HabitacionGestorController extends FXController implements Initiali
     private void loadTabla(){
         this.habitacionManager.load();
         
-        this.columnId.setCellValueFactory(new PropertyValueFactory<Habitacion,String>("id"));
-        this.columnNumero.setCellValueFactory(new PropertyValueFactory<Habitacion,Integer>("numero"));
-        this.columnPrecio.setCellValueFactory(new PropertyValueFactory<Habitacion,Float>("precio"));
+        this.columnId.setCellValueFactory(new PropertyValueFactory("id"));
+        this.columnNumero.setCellValueFactory(new PropertyValueFactory("numero"));
+        this.columnPrecio.setCellValueFactory(new PropertyValueFactory("precio"));
         
         listaHabitacionesTabla = FXCollections.observableArrayList(this.habitacionManager.getHabitacionList());
         
@@ -160,7 +160,7 @@ public class HabitacionGestorController extends FXController implements Initiali
     }
     
     public void enterIntoMenu(){
-        changeWindow(mainWindow, "/gestor/hotel/app/vista/javafx/Menu.fxml", "Login");
+        changeWindow(mainWindow, "/gestor/hotel/app/vista/javafx/Menu.fxml", "Menú principal");
     }
     
 }

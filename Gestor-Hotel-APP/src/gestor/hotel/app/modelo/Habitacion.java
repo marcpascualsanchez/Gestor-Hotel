@@ -25,7 +25,6 @@ public class Habitacion extends Entity{
         Arrays.asList("id", "numero", "precio", "id_usuario_creador")
     );
 
-    public int id;
     public int numero;
     public float precio;
     public int id_usuario_creador;
@@ -51,13 +50,6 @@ public class Habitacion extends Entity{
     }
     
     /*SETTERS&GETTERS*/
-    public int getId(){
-        return this.id;
-    }
-
-    public void setId(int id){
-        this.id = id;
-    }
         
     public int getNumero(){
         return this.numero;

@@ -26,7 +26,6 @@ public class Hospedaje extends Entity {
         Arrays.asList("id", "id_cliente", "id_habitacion", "fecha_inicio", "fecha_final", "id_usuario_creador")
     );
 
-    public int id;
     public int idCliente;
     public int idHabitacion;
     public Date fechaInicio;
@@ -57,13 +56,6 @@ public class Hospedaje extends Entity {
     }
     
     /*SETTERS&GETTERS*/
-    public int getId(){
-        return this.id;
-    }
-
-    public void setId(int id){
-        this.id = id;
-    }
     
     public int getIdCliente(){
         return this.idCliente;
