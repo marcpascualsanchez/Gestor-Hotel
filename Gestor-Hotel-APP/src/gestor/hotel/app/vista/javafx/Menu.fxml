@@ -9,7 +9,7 @@
       <Label layoutX="275.0" layoutY="56.0" text="Gestionar" />
       <Button fx:id="buttonClientes" layoutX="388.0" layoutY="141.0" mnemonicParsing="false" onAction="#enterIntoClientesManagement" prefHeight="41.0" prefWidth="140.0" text="Clientes" />
       <Button fx:id="buttonReservas" layoutX="70.0" layoutY="253.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="140.0" text="Reservas" />
-      <Button fx:id="buttonUsuarios" layoutX="388.0" layoutY="253.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="140.0" text="Usuarios" />
+      <Button fx:id="buttonUsuarios" layoutX="388.0" layoutY="253.0" mnemonicParsing="false" onAction="#enterIntoUsuariosManagement" prefHeight="41.0" prefWidth="140.0" text="Usuarios" />
       <Button fx:id="buttonHabitaciones" layoutX="70.0" layoutY="141.0" mnemonicParsing="false" onAction="#enterIntoHabitacionesManagement" prefHeight="41.0" prefWidth="140.0" text="Habitaciones" />
    </children>
 </AnchorPane>
