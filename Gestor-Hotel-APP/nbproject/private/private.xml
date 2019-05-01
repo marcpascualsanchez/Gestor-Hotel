@@ -5,10 +5,12 @@
         <group>
             <file>file:/C:/xampp/htdocs/Gestor-Hotel/Gestor-Hotel-APP/src/gestor/hotel/app/controlador/TestController.java</file>
             <file>file:/C:/xampp/htdocs/Gestor-Hotel/Gestor-Hotel-APP/src/gestor/hotel/app/modelo/Insertable.java</file>
+            <file>file:/C:/xampp/htdocs/Gestor-Hotel/Gestor-Hotel-APP/src/gestor/hotel/app/controlador/HospedajeManager.java</file>
             <file>file:/C:/xampp/htdocs/Gestor-Hotel/Gestor-Hotel-APP/src/gestor/hotel/app/modelo/Deleteable.java</file>
             <file>file:/C:/xampp/htdocs/Gestor-Hotel/Gestor-Hotel-APP/src/gestor/hotel/app/controlador/EntityManager.java</file>
             <file>file:/C:/xampp/htdocs/Gestor-Hotel/Gestor-Hotel-APP/src/gestor/hotel/app/modelo/Loadable.java</file>
             <file>file:/C:/xampp/htdocs/Gestor-Hotel/Gestor-Hotel-APP/src/gestor/hotel/app/controlador/MySQLController.java</file>
+            <file>file:/C:/xampp/htdocs/Gestor-Hotel/Gestor-Hotel-APP/src/gestor/hotel/app/modelo/Entity.java</file>
             <file>file:/C:/xampp/htdocs/Gestor-Hotel/Gestor-Hotel-APP/src/gestor/hotel/app/controlador/HabitacionManager.java</file>
             <file>file:/C:/xampp/htdocs/Gestor-Hotel/Gestor-Hotel-APP/src/gestor/hotel/app/controlador/ClienteGestorController.java</file>
             <file>file:/C:/xampp/htdocs/Gestor-Hotel/Gestor-Hotel-APP/src/gestor/hotel/app/controlador/ClienteManager.java</file>
