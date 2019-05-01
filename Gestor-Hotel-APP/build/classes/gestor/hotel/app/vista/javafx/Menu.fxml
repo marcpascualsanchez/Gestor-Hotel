@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="357.0" prefWidth="600.0" styleClass="mainColorBackground" stylesheets="/gestor/hotel/app/vista/general.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestor.hotel.app.controlador.MenuController">
+   <children>
+      <Label layoutX="266.0" layoutY="43.0" prefHeight="21.0" prefWidth="68.0" styleClass="mainTitle" stylesheets="general.css" text="Gestionar" />
+      <Button fx:id="buttonClientes" layoutX="388.0" layoutY="107.0" mnemonicParsing="false" onAction="#enterIntoClientesManagement" prefHeight="41.0" prefWidth="140.0" stylesheets="general.css" text="Clientes">
+         <styleClass>
+            <String fx:value="mainButton" />
+            <String fx:value="secondaryLetterColor" />
+         </styleClass></Button>
+      <Button fx:id="buttonReservas" layoutX="70.0" layoutY="212.0" mnemonicParsing="false" onAction="#enterIntoHospedajesManagement" prefHeight="41.0" prefWidth="140.0" stylesheets="general.css" text="Reservas">
+         <styleClass>
+            <String fx:value="mainButton" />
+            <String fx:value="secondaryLetterColor" />
+         </styleClass></Button>
+      <Button fx:id="buttonUsuarios" layoutX="388.0" layoutY="212.0" mnemonicParsing="false" onAction="#enterIntoUsuariosManagement" prefHeight="41.0" prefWidth="140.0" stylesheets="general.css" text="Usuarios">
+         <styleClass>
+            <String fx:value="mainButton" />
+            <String fx:value="secondaryLetterColor" />
+         </styleClass></Button>
+      <Button fx:id="buttonHabitaciones" layoutX="70.0" layoutY="107.0" mnemonicParsing="false" onAction="#enterIntoHabitacionesManagement" prefHeight="41.0" prefWidth="140.0" stylesheets="general.css" text="Habitaciones">
+         <styleClass>
+            <String fx:value="mainButton" />
+            <String fx:value="secondaryLetterColor" />
+         </styleClass></Button>
+      <Button fx:id="back" layoutX="263.0" layoutY="274.0" mnemonicParsing="false" onAction="#enterIntoLogin" prefHeight="30.0" prefWidth="74.0" stylesheets="general.css" text="Salir">
+         <styleClass>
+            <String fx:value="mainButton" />
+            <String fx:value="secondaryLetterColor" />
+         </styleClass>
+      </Button>
+      <Text fx:id="textError" layoutX="388.0" layoutY="266.0" stroke="#d73e3e" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: red;" wrappingWidth="140.0" />
+   </children>
+</AnchorPane>

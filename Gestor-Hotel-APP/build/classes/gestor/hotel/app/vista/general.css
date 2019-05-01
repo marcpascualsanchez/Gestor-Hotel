@@ -1,0 +1,30 @@
+.mainBackground {
+    -fx-background-color: #505356;
+    -fx-border-radius: 50;
+}
+
+.mainColorBackground{
+    -fx-background-color: white;
+}
+
+.secondaryColorBackground{
+    -fx-background-color: #abeae1;
+}
+
+.mainLetterColor{
+    -fx-text-fill: #024f44;
+}
+
+.secondaryLetterColor{
+    -fx-text-fill: white;
+}
+
+.mainButton{
+    -fx-background-color: #05af96;
+}
+
+.mainTitle{
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #05af96;
+}
